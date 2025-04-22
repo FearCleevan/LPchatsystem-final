@@ -1,0 +1,232 @@
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Darker overlay for better focus */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    background: #2c3e50; /* Darker background for contrast */
+    padding: 25px;
+    border-radius: 15px;
+    width: 650px !important; /* Slightly wider for better spacing */
+    max-width: 90%;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  }
+  
+  .modal h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .modal input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .modal input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .modal input:focus {
+    border-color: #3498db; /* Highlight input on focus */
+    outline: none;
+  }
+  
+  /* File Input for Avatar */
+  .modal input[type="file"] {
+    display: none; /* Hide the default file input */
+  }
+  
+  .file-input-label {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: #3498db; /* Blue background */
+    color: #ffffff; /* White text */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 15px;
+  }
+  
+  .file-input-label:hover {
+    background: #2980b9; /* Darker blue on hover */
+  }
+  
+  /* Avatar Preview */
+  .avatar-preview {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 10px auto;
+    display: block;
+    object-fit: cover;
+    border: 2px solid #3498db; /* Highlight border for avatar */
+  }
+  
+  /* Selected Users Section */
+  .selected-users {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .selected-user {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 20px;
+    gap: 8px;
+    transition: background 0.3s ease;
+  }
+  
+  .selected-user:hover {
+    background: rgba(255, 255, 255, 0.2); /* Highlight on hover */
+  }
+  
+  .selected-user img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+  
+  .selected-user span {
+    font-size: 0.9rem;
+  }
+  
+  .selected-user .remove-icon {
+    cursor: pointer;
+    color: #e74c3c; /* Red color for remove icon */
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .selected-user .remove-icon:hover {
+    color: #c0392b; /* Darker red on hover */
+  }
+  
+  /* User List */
+  .user-list {
+    max-height: 250px; /* Slightly taller for better visibility */
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 10px; /* Add padding for scrollbar */
+  }
+  
+  .user-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-radius: 8px;
+  }
+  
+  .user-item:hover {
+    background: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
+  }
+  
+  .user-item img {
+    width: 36px; /* Slightly larger avatars */
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+  
+  .user-item span {
+    flex: 1;
+    font-size: 1rem;
+  }
+  
+  .user-item .add-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #3498db; /* Blue color for add button */
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+  }
+  
+  .user-item .add-btn:disabled {
+    background: #7f8c8d; /* Grayed out when disabled */
+    cursor: not-allowed;
+  }
+  
+  .user-item .add-btn:hover:not(:disabled) {
+    background: #2980b9; /* Darker blue on hover */
+  }
+  
+  /* Modal Actions */
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .modal-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+  
+  .modal-actions button:first-child {
+    background: #e74c3c; /* Red color for cancel button */
+    color: #ffffff;
+  }
+  
+  .modal-actions button:first-child:hover {
+    background: #c0392b; /* Darker red on hover */
+  }
+  
+  .modal-actions button:last-child {
+    background: #2ecc71; /* Green color for create button */
+    color: #ffffff;
+  }
+  
+  .modal-actions button:last-child:hover {
+    background: #27ae60; /* Darker green on hover */
+  }
+  
+  /* Scrollbar Styling */
+  .user-list::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .user-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+  
+  .user-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+  }
+  
+  .user-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }

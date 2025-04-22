@@ -1,0 +1,207 @@
+.chatList {
+    flex: 1;
+    overflow: auto;
+    /* Use 'auto' instead of 'scroll' to only show scrollbar when needed */
+
+    /* Custom scrollbar styles */
+    scrollbar-width: thin;
+    /* For Firefox */
+    scrollbar-color: rgba(17, 25, 40, 0.5) transparent;
+    /* For Firefox */
+
+    /* For WebKit browsers (Chrome, Safari, Edge) */
+    &::-webkit-scrollbar {
+        width: 8px;
+        /* Width of the scrollbar */
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        /* Background of the scrollbar track */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(17, 25, 40, 0.5);
+        /* Color of the scrollbar thumb */
+        border-radius: 4px;
+        /* Rounded corners for the thumb */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(17, 25, 40, 0.7);
+        /* Color of the thumb on hover */
+    }
+
+    .search {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        border-bottom: 1px solid #dddddd35;
+
+        .searchBar {
+            flex: 1;
+            background-color: rgba(17, 25, 40, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+
+            input {
+                background-color: transparent;
+                border: none;
+                outline: none;
+                color: white;
+                flex: 1;
+            }
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .add {
+            width: 36px;
+            height: 36px;
+            background-color: rgba(17, 25, 40, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        cursor: pointer;
+        border-bottom: 1px solid #dddddd35;
+
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #ccc;
+        }
+
+        .texts {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            span {
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            p {
+                font-size: 12px;
+                font-weight: 300;
+                color: #e4e4e4;
+            }
+        }
+    }
+}
+
+.navbar {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #dddddd35;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.navbar ul li {
+    text-align: center;
+    flex: 1;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    /* Add this for positioning the notification badge */
+}
+
+.nav-item span {
+    font-size: 13px !important;
+}
+
+.nav-item i {
+    font-size: 24px;
+    margin-bottom: 5px;
+    transition: all ease 0.3s;
+}
+
+/* Active Navigation Item */
+.nav-item.active {
+    color: rgba(17, 25, 40, 0.5);
+    /* Change color for active item */
+}
+
+.nav-item.active i {
+    color: rgba(17, 25, 40, 0.5);
+    /* Change icon color for active item */
+}
+
+.nav-item span {
+    font-size: 14px;
+    color: #ccc;
+    transition: all ease 0.3s;
+}
+
+.nav-item:hover {
+    color: rgba(17, 25, 40, 0.5);
+    /* Highlight on hover */
+}
+
+/* Notification Badge Styles */
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    /* Adjust position to align with the icon */
+    right: 10px;
+    /* Adjust position to align with the icon */
+    background-color: red;
+    /* Red background for the badge */
+    color: white;
+    /* White text color */
+    border-radius: 50%;
+    /* Circular shape */
+    font-size: 12px;
+    /* Font size for the number */
+    width: 18px;
+    /* Fixed width */
+    height: 18px;
+    /* Fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    /* Bold text */
+    z-index: 1;
+    /* Ensure the badge is above other elements */
+}
+
+/* Hover effect for the notification badge */
+.nav-item:hover .notification-badge {
+    background-color: darkred;
+    /* Darker red on hover */
+}

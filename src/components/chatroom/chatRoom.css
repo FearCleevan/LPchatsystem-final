@@ -1,0 +1,178 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("/LPlogo.jpg") no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #ffffff;
+  }
+  
+  .dashboard-container {
+    width: 80vw;
+    height: 90vh;
+    background-color: #26417c;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    display: flex;
+  
+    /* Sidebar Styles */
+    .sidebar {
+      width: 20%;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-top-left-radius: 12px;
+      border-bottom-left-radius: 12px;
+      display: flex;
+      flex-direction: column;
+  
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+  
+      nav ul {
+        list-style: none;
+  
+        li {
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          text-decoration: none !important;
+          outline: none !important;
+          gap: 10px;
+          cursor: pointer;
+          transition: background 0.3s ease-in-out;
+  
+          a {
+            display: flex;
+            color: white;
+            align-items: center;
+            text-decoration: none !important;
+            outline: none !important;
+            gap: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+          }
+  
+          &:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+          }
+        }
+  
+        .logout {
+          margin-top: auto;
+          color: red;
+        }
+      }
+    }
+  
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+  
+      /* User Header */
+      .user-headers {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: calc(100% - 250px); 
+        padding: 20px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        z-index: 1000;
+  
+        .notification-icon {
+          position: relative;
+          margin-right: 20px;
+          font-size: 1.6rem;
+          color: #ffffff;
+          cursor: pointer;
+  
+          .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 18px;
+            height: 18px;
+            transition: all ease 0.3s;
+          }
+  
+          &:hover {
+            color: rgba(255, 255, 255, 0.5);
+  
+            .notification-badge {
+              background-color: #ff4444; 
+            }
+          }
+        }
+  
+        .user-info {
+          display: flex;
+          align-items: center;
+  
+          .user-avatar {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 10px;
+          }
+  
+          .user-details {
+            display: flex;
+            flex-direction: column;
+  
+            .user-name {
+              font-size: 1rem;
+              font-weight: 600;
+              color: #ffffff;
+            }
+  
+            .user-role {
+              font-size: 0.8rem;
+              color: #acacac;
+            }
+          }
+        }
+      }
+    }
+    .member-avatarss {
+      display: flex;
+      gap: 5px; /* Space between avatars */
+      flex-wrap: wrap; /* Wrap avatars to the next line if they overflow */
+    }
+    
+    .member-avatars {
+      width: 20px; /* Set avatar size */
+      height: 20px;
+      border-radius: 50%; /* Make avatars circular */
+      object-fit: cover; /* Ensure the image fits within the circle */
+      border: 1px solid #ddd; /* Optional: Add a border */
+      cursor: pointer; /* Change cursor to pointer on hover */
+    }
+    
+    .member-avatar:hover {
+      border-color: #007bff; /* Highlight border on hover */
+    }
+  }

@@ -1,0 +1,115 @@
+.welcome-page {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+    border-left: 1px solid #dddddd35;
+}
+
+.welcome-content {
+    padding: 40px;
+}
+
+.welcome-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.user-fullname {
+    color: #f05151;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-page p {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+.lp-logo {
+    width: 550px;
+    height: auto;
+    margin: 20px 0;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets (768px to 1023px) */
+@media (max-width: 1023px) {
+    .welcome-page h1 {
+        font-size: 2rem;
+    }
+
+    .user-fullname {
+        font-size: 2rem;
+    }
+
+    .welcome-page p {
+        font-size: 1.25rem;
+    }
+
+    .lp-logo {
+        width: 400px;
+        padding: 15px;
+    }
+}
+
+/* For mobile devices (up to 767px) */
+@media (max-width: 767px) {
+    .welcome-page {
+        padding: 10px;
+        border-left: none; /* Remove border on mobile */
+    }
+
+    .welcome-content {
+        padding: 20px;
+    }
+
+    .welcome-page h1 {
+        font-size: 1.75rem;
+    }
+
+    .user-fullname {
+        font-size: 1.75rem;
+    }
+
+    .welcome-page p {
+        font-size: 1rem;
+    }
+
+    .lp-logo {
+        max-width: 200px;
+        padding: 10px;
+    }
+}
+
+/* For very small mobile devices (up to 480px) */
+@media (max-width: 480px) {
+    .welcome-page h1 {
+        font-size: 1.5rem;
+    }
+
+    .user-fullname {
+        font-size: 1.5rem;
+    }
+
+    .welcome-page p {
+        font-size: 0.875rem;
+    }
+
+    .lp-logo {
+        max-width: 100px;
+        padding: 10px;
+    }
+}

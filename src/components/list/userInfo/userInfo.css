@@ -1,0 +1,458 @@
+/* Userinfo Container */
+.userinfo {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+    border-bottom: 1px solid #dddddd35;
+
+    button {
+        background: none;
+        border: none;
+        outline: none;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 14px;
+        padding: 0;
+    }
+
+    .user {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .userName {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .userTitle {
+            font-size: 14px;
+            color: rgb(161, 161, 161);
+            margin-top: 2px;
+        }
+    }
+
+    .icons {
+        display: flex;
+        gap: 20px;
+        position: relative;
+        /* Required for positioning the pop-up menu */
+
+        img {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+    }
+
+    .back-to-login-btn {
+        background-color: #007bff;
+        color: rgb(255, 255, 255);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+}
+
+/* Pop-up Menu Styles */
+.popup-menu {
+    position: absolute;
+    top: 30px;
+    /* Adjust based on your layout */
+    right: 0;
+    background-color: #26417c;
+    border: 1px solid #434c61;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 8px 0;
+    width: 150px;
+    /* Adjust width as needed */
+}
+
+.menu-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+    text-align: left;
+
+    &:hover {
+        background-color: #182a52;
+    }
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    .modal {
+        background: #222;
+        padding: 20px;
+        border-radius: 10px;
+        width: 320px;
+        color: white;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+        position: relative;
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h3 {
+                margin: 0;
+            }
+
+            .close-btn {
+                background: none;
+                border: none;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+            }
+        }
+
+        .status-input-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+
+            .status-input {
+                flex: 1;
+                padding: 8px;
+                border-radius: 5px;
+                border: 1px solid #555;
+                background: #333;
+                color: white;
+            }
+
+            .emoji-btn {
+                background: none;
+                border: none;
+                color: white;
+                font-size: 20px;
+                cursor: pointer;
+            }
+        }
+
+        .emoji-picker-container {
+            position: absolute;
+            z-index: 1001;
+            margin-top: 10px;
+        }
+
+        .status-list {
+            display: flex;
+            flex-direction: column;
+
+            .status-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 8px;
+                cursor: pointer;
+                border-radius: 5px;
+
+                &:hover {
+                    background: #444;
+                }
+
+                .emoji {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .done-btn {
+            background: blue;
+            color: white;
+            padding: 8px;
+            width: 100%;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+
+            &:hover {
+                background: darkblue;
+            }
+        }
+    }
+
+    /* Account Settings Modal Styles */
+    .account-settings-modal {
+        background: #222;
+        padding: 20px;
+        border-radius: 10px;
+        width: 600px;
+        /* Adjust width as needed */
+        color: white;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+        position: relative;
+    }
+
+    .account-settings-modal .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .account-settings-modal .modal-header h3 {
+        margin: 0;
+    }
+
+    .account-settings-modal .modal-header .close-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .account-settings-content {
+        display: flex;
+        gap: 20px;
+        /* Space between left and right sections */
+    }
+
+    .personal-details {
+        flex: 1;
+        /* Take up remaining space */
+    }
+
+    .profile-image-section {
+        width: 250px;
+        /* Fixed width for the profile image section */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-image-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .profile-image {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        /* Circular profile image */
+        object-fit: cover;
+        border: 2px solid #555;
+    }
+
+    .change-photo-btn {
+        background: blue;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .change-photo-btn:hover {
+        background: darkblue;
+    }
+
+    .account-settings-modal .form-group {
+        margin-bottom: 15px;
+    }
+
+    .account-settings-modal .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #aaa;
+    }
+
+    .account-settings-modal .form-group input {
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #555;
+        background: #333;
+        outline: none;
+        color: white;
+        font-size: 14px;
+    }
+
+    .account-settings-modal .form-group input:read-only {
+        background: #444;
+        cursor: not-allowed;
+    }
+
+    .account-settings-modal .form-group .change-password-btn {
+        background: blue;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .account-settings-modal .form-group .change-password-btn:hover {
+        background: darkblue;
+    }
+
+    .account-settings-modal .modal-footer {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .account-settings-modal .modal-footer .cancel-btn {
+        background: #555;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .account-settings-modal .modal-footer .cancel-btn:hover {
+        background: #666;
+    }
+
+    .account-settings-modal .modal-footer .save-btn {
+        background: blue;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .account-settings-modal .modal-footer .save-btn:hover {
+        background: darkblue;
+    }
+
+    /* Change Password Form Styles */
+    .change-password-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .change-password-form .form-group {
+        margin-bottom: 10px;
+    }
+
+    .change-password-form .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #aaa;
+    }
+
+    .change-password-form .form-group input {
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #555;
+        background: #333;
+        color: white;
+        font-size: 14px;
+    }
+
+    .change-password-form .submit-btn {
+        background: blue;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .change-password-form .submit-btn:hover {
+        background: darkblue;
+    }
+
+    .change-password-form .cancel-btn {
+        background: #555;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .change-password-form .cancel-btn:hover {
+        background: #666;
+    }
+
+    /* Password Input Container */
+.password-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input-container input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background: #333;
+    color: white;
+    font-size: 14px;
+    padding-right: 40px; /* Space for the eye icon */
+}
+
+.password-toggle-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #aaa;
+    font-size: 16px;
+}
+
+.password-toggle-icon:hover {
+    color: #fff;
+}
+}
